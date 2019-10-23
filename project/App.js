@@ -1,19 +1,50 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { Button, View, Text, Image } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+//Page d'aceuil
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Aceuil</Text>
+        <Button
+          title="Aller aux details"
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
+
+        <Image
+          style={{width: 150, height: 150}}
+          source={require('./img/femme.jpg')}
+        />
+      </View>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+//Page de detail
+class DetailsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Detail</Text>
+        <Button
+          title="Acceuil"
+          onPress={() => this.props.navigation.navigate('Home')}
+        />
+        <Button
+          title="Retour"
+          onPress={() => this.props.navigation.goBack()}
+        />
+      </View>
+    );
+  }
+}
+
+const RootStack = createStackNavigator({
+  Home: HomeScreen,
+  Details: DetailsScreen,
 });
+
+export default createAppContainer(RootStack);
