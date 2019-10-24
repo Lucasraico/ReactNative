@@ -6,6 +6,7 @@ import AproposDe from './Components/AproposDe';
 import HomeScreen from './Components/HomeScreen';
 import DetailsScreen from './Components/DetailScreen';
 import ShopScreen from './Components/ShopScreen';
+import Properties from './Components/Properties';
 
 export  class App extends React.Component {
   render() {
@@ -24,6 +25,7 @@ const RootStack = createStackNavigator({
   Details: DetailsScreen,
   Apropos: AproposDe,
   Shop: ShopScreen,
+  Properties : Properties,
 });
 
 export default createAppContainer(RootStack);

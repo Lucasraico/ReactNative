@@ -19,6 +19,10 @@ class HomeScreen extends React.Component {
             title="A propose de"
             onPress={() => this.props.navigation.navigate('Apropos')}
           />
+          <Button
+            title="Caractéristique"
+            onPress={() => this.props.navigation.navigate('Properties')}
+          />
         </View>
       );
     

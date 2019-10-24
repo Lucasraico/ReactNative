@@ -6,7 +6,8 @@ import { View, Button, Text } from 'react-native';
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-       <Text>ceci est un</Text>
+       <Text>ceci est un RPG</Text>
+       <Text>Il a été fait par André, Adam, Quentin, Lucas</Text>
       </View>
     );
   }
